@@ -12,6 +12,7 @@
             <a href='categorie.php' class='btn btn-secondary m-2 active' role='button'>Categorie</a>
             <a href='members.php' class='btn btn-secondary m-2 active' role='button'>Membres</a>
             <a href='utilisateurs.php' class='btn btn-secondary m-2 active' role='button'>Utilisateurs</a>
+	    <a href='contact.php' class='btn btn-secondary m-2 active' role='button'>contact</a>
 
             </p>
         </div>
