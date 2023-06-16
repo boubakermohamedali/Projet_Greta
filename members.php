@@ -28,6 +28,7 @@ $db=null;
 <a href='categorie.php' class='btn btn-secondary m-2 active' role='button'>Categorie</a>
 <a href='members.php' class='btn btn-secondary m-2 active' role='button'>Membres</a>
 <a href='utilisateurs.php' class='btn btn-secondary m-2 active' role='button'>Utilisateurs</a>
+<a href='contact.php' class='btn btn-secondary m-2 active' role='button'>Contact</a>
 
 <?php if (!empty($_GET['type']) && ($_GET['type'] === 'success')) : ?>
     <div class='row'>
