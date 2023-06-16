@@ -39,6 +39,8 @@ if (isset($_GET['id'])) {
 <a href='categorie.php' class='btn btn-secondary m-2 active' role='button'>Categorie</a>
 <a href='members.php' class='btn btn-secondary m-2 active' role='button'>Membres</a>
 <a href='utilisateur.php' class='btn btn-secondary m-2 active' role='button'>Utilisateurs</a>
+<a href='contact.php' class='btn btn-secondary m-2 active' role='button'>Contact</a>
+
 <div class='row'>
     <h1 class='col-md-12 text-center border border-dark bg-primary text-white'>Member Form</h1>
 </div>
