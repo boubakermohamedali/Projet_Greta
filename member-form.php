@@ -47,14 +47,14 @@ if (isset($_GET['id'])) {
 <div class='row'>
     <form method='post' action='add-edit-member.php'>
         <!--  Ajouter the ID to the form if it exists but make the field hidden -->
-        <input type='hidden' name='id' value='<?= $member['id_membre'] ?? '' ?>'>
+        <input type='hidden' name='id' value='<?= $members['id_membre'] ?? '' ?>'>
         <div class='form-group my-3'>
             <label for='firstName'>Prénom</label>
-            <input type='text' name='prenom' class='form-control' id='firstName' placeholder='Enter prénom' required autofocus value='<?= isset($member['prenom']) ? htmlentities($member['prenom']) : '' ?>'>
+            <input type='text' name='prenom' class='form-control' id='firstName' placeholder='Enter prénom' required autofocus value='<?= isset($members['prenom']) ? htmlentities($member['prenom']) : '' ?>'>
         </div>
         <div class='form-group my-3'>
             <label for='lastName'>Nom</label>
-            <input type='text' name='nom' class='form-control' id='lastName' placeholder='Enter nom' required value='<?= isset($member['nom']) ? htmlentities($member['nom'])  : '' ?>'>
+            <input type='text' name='nom' class='form-control' id='lastName' placeholder='Enter nom' required value='<?= isset($member['nom']) ? htmlentities($members['nom'])  : '' ?>'>
         </div>
         <div class='form-group my-3'>
             <label for='adresse_postale'>Adresse_Postale</label>

@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
 <div class='row'>
     <form method='post' action='add-edit-member.php'>
         <!--  Ajouter the ID to the form if it exists but make the field hidden -->
-        <input type='hidden' name='id' value='<?= $member['id_membre'] ?? '' ?>'>
+        <input type='hidden' name='id' value='<?= $utilisateurs['id_membre'] ?? '' ?>'>
         <div class='form-group my-3'>
             <label for='firstName'>Prénom</label>
             <input type='text' name='prenom' class='form-control' id='firstName' placeholder='Enter prénom' required autofocus value='<?= isset($member['prenom']) ? htmlentities($member['prenom']) : '' ?>'>
