@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : Mar. 02 Mai 2023 à 12:56
+-- Généré le : Jeu. 22 Juin 2023 à 09:21
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `bateau_pirate`
+-- Base de données : `bateaux_pirates`
 --
 
 -- --------------------------------------------------------
@@ -63,7 +63,7 @@ CREATE TABLE `appartient` (
 CREATE TABLE `categories` (
   `id_categorie` int NOT NULL,
   `nom_categorie` varchar(45) NOT NULL,
-  `description_categorie_` varchar(100) NOT NULL
+  `description_categorie` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -86,9 +86,9 @@ CREATE TABLE `etats` (
 
 CREATE TABLE `membres` (
   `id_membre` int NOT NULL,
-  `Telephone` int NOT NULL,
+  `telephone` int NOT NULL,
   `url_photo_profil` varchar(150) NOT NULL,
-  `Nom` varchar(100) NOT NULL,
+  `nom` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `email` varchar(150) NOT NULL,
   `prenom` varchar(150) NOT NULL,
   `token` varchar(50) NOT NULL,
@@ -101,6 +101,13 @@ CREATE TABLE `membres` (
   `date_validation_token` date NOT NULL,
   `date_description` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `membres`
+--
+
+INSERT INTO `membres` (`id_membre`, `telephone`, `url_photo_profil`, `nom`, `email`, `prenom`, `token`, `user_name`, `hash`, `adresse_postale`, `ville`, `code_postal`, `solde_cagnotte`, `date_validation_token`, `date_description`) VALUES
+(12, 493021512, 'https://www.shutterstock.com', 'shunter stock', 'shunterstock@mail.fr', 'Huty', 'pop', 'lok', 'courte06', 'avenue de Grasse', 'Cannes', '06400', 20, '2023-05-16', '2023-05-18');
 
 -- --------------------------------------------------------
 
@@ -133,15 +140,6 @@ CREATE TABLE `transactions_bancaires` (
 --
 -- Index pour les tables déchargées
 --
-
---
--- Index pour la table `annonces`
---
-ALTER TABLE `annonces`
-  ADD PRIMARY KEY (`id_annonce`),
-  ADD KEY `id_membre` (`id_membre`),
-  ADD KEY `id_etat` (`id_etat`),
-  ADD KEY `id_membre_1` (`id_membre_1`);
 
 --
 -- Index pour la table `appartient`
@@ -187,25 +185,17 @@ ALTER TABLE `transactions_bancaires`
 --
 
 --
--- Contraintes pour la table `annonces`
---
-ALTER TABLE `annonces`
-  ADD CONSTRAINT `annonces_ibfk_1` FOREIGN KEY (`id_membre`) REFERENCES `membres` (`id_membre`),
-  ADD CONSTRAINT `annonces_ibfk_2` FOREIGN KEY (`id_etat`) REFERENCES `etats` (`id_etat`),
-  ADD CONSTRAINT `annonces_ibfk_3` FOREIGN KEY (`id_membre_1`) REFERENCES `membres` (`id_membre`);
-
---
 -- Contraintes pour la table `appartient`
 --
 ALTER TABLE `appartient`
-  ADD CONSTRAINT `appartient_ibfk_1` FOREIGN KEY (`id_annonce`) REFERENCES `annonces` (`id_annonce`),
+  ADD CONSTRAINT `appartient_ibfk_1` FOREIGN KEY (`id_annonce`) REFERENCES `bateau_pirate`.`annonces` (`id_annonce`),
   ADD CONSTRAINT `appartient_ibfk_2` FOREIGN KEY (`id_categorie`) REFERENCES `categories` (`id_categorie`);
 
 --
 -- Contraintes pour la table `photos`
 --
 ALTER TABLE `photos`
-  ADD CONSTRAINT `photos_ibfk_1` FOREIGN KEY (`id_annonce`) REFERENCES `annonces` (`id_annonce`);
+  ADD CONSTRAINT `photos_ibfk_1` FOREIGN KEY (`id_annonce`) REFERENCES `bateau_pirate`.`annonces` (`id_annonce`);
 
 --
 -- Contraintes pour la table `transactions_bancaires`

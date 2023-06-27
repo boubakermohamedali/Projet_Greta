@@ -6,7 +6,7 @@ function connect() {
     $hostname = 'localhost';
 
     // nom de la base de données
-    $dbname = 'bateau_pirate';
+    $dbname = 'bateaux_pirates';
 
     // identifiant et mot de passe de connexion à la BDD
     $username = 'root';
@@ -23,51 +23,49 @@ function connect() {
     }
 }
 
-// Récupération d'une liste de tous les abos existant en BDD
-function getCategorie() {
+// Récupération d'une liste de tous les annonces existant en BDD
+function getAnnonce() {
     try {
         // Récupération de l'objet PDO
         $db = connect();
 
-        // Requête pour récupérer tous les categories
-        $categorieQuery=$db->query('SELECT * FROM categories');
-        $categorieQuery=$db->query('SELECT * FROM annonces');
-        $categorieQuery=$db->query('SELECT * FROM membres');
-        $categorieQuery=$db->query('SELECT * FROM membres');
+        // Requête pour récupérer tous les annonces
+        $annonceQuery=$db->query('SELECT * FROM categories');
+        $annonceQuery=$db->query('SELECT * FROM annonces');
+        $annonceQuery=$db->query('SELECT * FROM membres');
 
         // Renvoie tous les lignes
-        return $categorieQuery->fetchAll(PDO::FETCH_ASSOC);
+        return $annonceQuery->fetchAll(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
         // En cas d'erreur afficher le message
         echo $e->getMessage();
     }
 }
-// Récupération d'une liste de tous les abos existant en BDD
-function getUtilisateur() {
+// Récupération d'une liste de tous les membres existant en BDD
+function getMembre () {
   try {
       // Récupération de l'objet PDO
       $db = connect();
 
-      // Requête pour récupérer tous les categories
-      $categorieQuery=$db->query('SELECT * FROM categories');
-      $categorieQuery=$db->query('SELECT * FROM annonces');
-      $categorieQuery=$db->query('SELECT * FROM membres');
-      $categorieQuery=$db->query('SELECT * FROM membres');
+      // Requête pour récupérer tous les membres
+      $membreQuery=$db->query('SELECT * FROM categories');
+      $membreQuery=$db->query('SELECT * FROM annonces');
+      $membreQuery=$db->query('SELECT * FROM membres');
 
       // Renvoie tous les lignes
-      return $categorieQuery->fetchAll(PDO::FETCH_ASSOC);
+      return $membreQuery->fetchAll(PDO::FETCH_ASSOC);
   } catch (Exception $e) {
       // En cas d'erreur afficher le message
       echo $e->getMessage();
   }
 }
-// Récupération d'une liste de tous les abos existant en BDD
+// Récupération d'une liste de tous les membres existant en BDD
 function getAnnonces() {
   try {
       // Récupération de l'objet PDO
       $db = connect();
 
-      // Requête pour récupérer tous les abos
+      // Requête pour récupérer tous les annonces
       
       $annonceQuery=$db->query('SELECT * FROM annonces');
       
@@ -80,17 +78,16 @@ function getAnnonces() {
       echo $e->getMessage();
   }
 }
-// Récupération d'une liste de tous les abos existant en BDD
-function getMembre() {
+// Récupération d'une liste de tous les categories existant en BDD
+function getCategorie() {
   try {
       // Récupération de l'objet PDO
       $db = connect();
 
-      // Requête pour récupérer tous les membres
+      // Requête pour récupérer tous les categories
       $categorieQuery=$db->query('SELECT * FROM categories');
-      $categorieQuery=$db->query('SELECT * FROM annonces');
-      $categorieQuery=$db->query('SELECT * FROM membres');
-      $categorieQuery=$db->query('SELECT * FROM membres');
+
+  
 
       // Renvoie tous les lignes
       return $categorieQuery->fetchAll(PDO::FETCH_ASSOC);

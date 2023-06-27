@@ -1,5 +1,5 @@
 <?php 
-require_once 'fonctions.php';
+require_once 'fonction.php';
 
 if (!empty($_POST)) {
     $id_annonce = $_POST['id_annonce'] ?? '';
@@ -23,23 +23,23 @@ if (!empty($_POST)) {
          // S'il n'y a pas d'ID, le membre n'existe pas dans la BDD donc on l'ajoute.
          try {
             // Préparation de la requête d'insertion.
-            $createMemStmt = $db->prepare('INSERT INTO annonces (id_annonce, date_vente, cont_annonce, Titre, Date_validation ,description_annonces, date_creation, duree_publication, date_fin_publication, id_membre, id_etat, id_membre_1) VALUES( :annonce, :date_vente, :cont_annonce, :Titre, :Date_validation , :description_annonces, :date_creation, :duree_publication, :date_fin_publication, :id_membre, :id_etat, :id_membre_1)');
+            $createAnnonceStmt = $db->prepare('INSERT INTO annonces (id_annonce, date_vente, cont_annonce, Titre, Date_validation ,description_annonces, date_creation, duree_publication, date_fin_publication, id_membre, id_etat, id_membre_1) VALUES( :annonce, :date_vente, :cont_annonce, :Titre, :Date_validation , :description_annonces, :date_creation, :duree_publication, :date_fin_publication, :id_membre, :id_etat, :id_membre_1)');
             // Exécution de la requête
-            $createMemberStmt->execute(['annonce,'=>$annonce, 'date_vente'=>$date_vente, 'cont_annonce'=>$cont_annonce, 'Titre'=>$Titre,'Date_validation'=>$Date_validation, 'description_annonces'=>$description_annonces, 'date_creation'=>$date_creation,'duree_publication'=>$duree_publication,  'date_fin_publication'=>$date_fin_publication,'id_membre,'=>$id_membre, 'id_etat'=>$id_etat, 'id_membre_1'=>$id_membre_1,]);
+            $createAnnonceStmt->execute(['annonce,'=>$annonce, 'date_vente'=>$date_vente, 'cont_annonce'=>$cont_annonce, 'Titre'=>$Titre,'Date_validation'=>$Date_validation, 'description_annonces'=>$description_annonces, 'date_creation'=>$date_creation,'duree_publication'=>$duree_publication,  'date_fin_publication'=>$date_fin_publication,'id_membre,'=>$id_membre, 'id_etat'=>$id_etat, 'id_membre_1'=>$id_membre_1,]);
             // Vérification qu'une ligne a bien été impactée avec rowCount(). Si oui, on estime que la requête a bien été passée, sinon, elle a sûrement échoué.
-            if ($createMemberStmt->rowCount()) {
+            if ($createAnnonceStmt->rowCount()) {
                 // Une ligne a été insérée => message de succès
                 $type = 'success';
-                $message = 'Membre ajouté';
+                $message = 'Annonce ajouté';
             } else {
                 // Aucune ligne n'a été insérée => message d'erreur
                 $type = 'error';
-                $message = 'Membre non ajouté';
+                $message = 'Annonce non ajouté';
             }
         } catch (Exception $e) {
             // Le membre n'a pas été ajouté, récupération du message de l'exception
             $type = 'error';
-            $message = 'Membre non ajouté: ' . $e->getMessage();
+            $message = 'Annonce non ajouté: ' . $e->getMessage();
         }
     } else {
         // Le membre existe, on met à jour ses informations
@@ -50,33 +50,33 @@ if (!empty($_POST)) {
         // Mise à jour des informations du membre
         try {
             // Préparation de la requête de mis à jour
-            $updateMemberStmt = $db->prepare('UPDATE annonces SET id_annonce= id_annonce,date_vente = date_vente, cont_annonce= cont_annonce, Titre= Titre, Date_validation= Date_validation , description_annonces =:description_annonces, date_creation= date_creation, duree_publication= duree_publication , date_fin_publication= date_fin_publication, id_nembre= id_membre, id_etat= id_etat, id_membre_1= id_membre_1  WHERE id= id');
+            $updateAnnonceStmt = $db->prepare('UPDATE annonces SET id_annonce= id_annonce,date_vente = date_vente, cont_annonce= cont_annonce, Titre= Titre, Date_validation= Date_validation , description_annonces =:description_annonces, date_creation= date_creation, duree_publication= duree_publication , date_fin_publication= date_fin_publication, id_nembre= id_membre, id_etat= id_etat, id_membre_1= id_membre_1  WHERE id= id');
             // Exécution de la requête
-           $updateMemberStmt->execute(['id_annonce'=>$id_annonce, 'date_vente'=>$date_vente, 'cont_annonce'=>$cont_annonce, 'Titre'=>$Titre, 'Date_validation'=>$Date_validation, 'description_annonces'=>$description_annonces, 'date_creation'=>$date_creation,'duree_publication'=>$duree_publication, 'date_fin_publication'=>$date_fin_publication,'id_membre,'=>$id_membre, 'id_etat'=>$id_etat, 'id_membre_1'=>$id_membre_1, 'id'=>$id]);
+           $updateAnnonceStmt->execute(['id_annonce'=>$id_annonce, 'date_vente'=>$date_vente, 'cont_annonce'=>$cont_annonce, 'Titre'=>$Titre, 'Date_validation'=>$Date_validation, 'description_annonces'=>$description_annonces, 'date_creation'=>$date_creation,'duree_publication'=>$duree_publication, 'date_fin_publication'=>$date_fin_publication,'id_membre,'=>$id_membre, 'id_etat'=>$id_etat, 'id_membre_1'=>$id_membre_1, 'id'=>$id]);
             // Vérification qu'une ligne a bien été impactée avec rowCount(). Si oui, on estime que la requête a bien été passée, sinon, elle a sûrement échoué.
-            if ($updateMemberStmt->rowCount()) {
+            if ($updateAnnonceStmt->rowCount()) {
                 // Une ligne a été mise à jour => message de succès
                 $type = 'success';
-                $message = 'Membre mis à jour';
+                $message = 'Annonce mis à jour';
             } else {
                 // Aucune ligne n'a été mise à jour => message d'erreur
                 $type = 'error';
-                $message = 'Membre non mis à jour';
+                $message = 'Annonce non mis à jour';
             }
         } catch (Exception $e) {
             // Une exception a été lancée, récupération du message de l'exception
             $type = 'error';
-            $message = 'Membre non mis à jour: ' . $e->getMessage();
+            $message = 'Annonce non mis à jour: ' . $e->getMessage();
         }
     }
 
     // Fermeture des connexions à la BDD
-    $createMemberStmt = null;
-    $updateMemberStmt = null;
+    $createAnnonceStmt = null;
+    $updateAnnonceStmt = null;
     $db = null;
 
     // Redirection vers la page principale des membres en passant le message et son type en variables GET
-    header('location:' . 'annoncess.php?type=' . $type . '&message=' . $message);
+    header('location:' . 'annonces.php?type=' . $type . '&message=' . $message);
 }
 
 ?>

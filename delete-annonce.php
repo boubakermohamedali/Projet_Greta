@@ -51,7 +51,7 @@ if (isset($_GET['id'])) {
     $db = null;
 
     // Redirection vers la page principale des abos en passant le message et son type en variables GET
-    header('location:' . 'abos.php?type=' . $type . '&message=' . $message);
+    header('location:' . 'annonces.php?type=' . $type . '&message=' . $message);
 } else {
     //Redirection vers l'Accueil
     header('location:' . 'index.php');

@@ -14,6 +14,7 @@
 <a href='members.php' class='btn btn-secondary m-2 active' role='button'>Membres</a>
 <a href='annonces.php' class='btn btn-secondary m-2 active' role='button'>Annonces</a>
 <a href='utilisateurs.php' class='btn btn-secondary m-2 active' role='button'>Utilisateurs</a>
+<a href='login.php' class='btn btn-secondary m-2 active' role='button'>Contacts</a>
 <?php 
   session_start();
   $bdd = new PDO('mysql:host=localhost;dbname=bateau_pirate;charset=utf8;', 'root','');
