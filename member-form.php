@@ -82,12 +82,7 @@ if (isset($_GET['id'])) {
         <div class='form-group my-3'>
             <br>
             <label for='firstName'>Prénom</label>
-<<<<<<< HEAD
-            <br>
-            <input type='text' name='prenom' class='form-control' id='firstName' placeholder='Enter prénom' required autofocus value='<?= isset($member['prenom']) ? htmlentities($member['prenom']) : '' ?>'>
-=======
             <input type='text' name='prenom' class='form-control' id='firstName' placeholder='Enter prénom' required autofocus value='<?= isset($members['prenom']) ? htmlentities($member['prenom']) : '' ?>'>
->>>>>>> 991bccced84c2ffc7e65fb706e1dd1903d4f7c2a
         </div>
         <br>
         <div class='form-group my-3'>
