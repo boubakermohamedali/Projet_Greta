@@ -35,6 +35,17 @@ $categorie = getCategorie();
 ?>
 
 <?php require_once 'header.php' ?>
+<<<<<<< HEAD
+=======
+
+<a href='index.php' class='btn btn-secondary m-2 active' role='button'>Accueil</a>
+<a href='categorie.php' class='btn btn-secondary m-2 active' role='button'>categories</a>
+<a href='annonces.php' class='btn btn-secondary m-2 active' role='button'>Annonces</a>
+<a href='members.php' class='btn btn-secondary m-2 active' role='button'>Membres</a>
+<a href='utilisateurs.php' class='btn btn-secondary m-2 active' role='button'>Utilisateurs</a>
+<a href='contact.php' class='btn btn-secondary m-2 active' role='button'>Contact</a>
+
+>>>>>>> 991bccced84c2ffc7e65fb706e1dd1903d4f7c2a
 <div class='row'>
     <div class='jumbotron bg-light m-2 p-2'>
         <h1 class='display-4'>Bienvenue au petit annonce!</h1>
@@ -78,6 +89,7 @@ $categorie = getCategorie();
         <button type='submit' class='btn btn-primary my-3' name='submit'>Envoyer</button>
     </form>
 </div>
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -128,3 +140,7 @@ $categorie = getCategorie();
     </body>
 </html>
 <?php require_once 'footer.php' ?>
+=======
+
+<?php require_once 'footer.php' ?>
+>>>>>>> 991bccced84c2ffc7e65fb706e1dd1903d4f7c2a

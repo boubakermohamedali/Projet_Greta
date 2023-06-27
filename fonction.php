@@ -51,7 +51,7 @@ if (!empty($_POST)) {
             // Préparation de la requête de mis à jour
             $updateAboStmt = $db->prepare('UPDATE annonces SET date_vente =:date_vente, cont_annonce=:cont_annonce, Titre=:Titre, Date_validation=:Date_validation , description_annonces =:description_annonces, date_creation=:date_creation, duree_publication=:duree_publication , date_fin_publication=:date_fin_publication, id_nembre=:id_membre, id_etat=:id_etat, id_membre_1=:id_membre_1  WHERE id=:id');
             // Exécution de la requête
-           $updateAboStmt->execute([ 'date_vente'=>$date_vente, 'cont_annonce'=>$cont_annonce, 'Titre'=>$Titre,'Date_validation'=>$Date_validation, 'description_annonces'=>$description_annonces, 'date_creation'=>$date_creation,'duree_publication'=>$duree_publication,  'date_fin_publication'=>$date_fin_publication,'id_membre,'=>$id_membre, 'id_etat'=>$id_etat, 'id_membre_1'=>$id_membre_1,]);
+           $updateAboStmt->execute([ 'id_annonce'=>$id_annonce,'date_vente'=>$date_vente, 'cont_annonce'=>$cont_annonce, 'Titre'=>$Titre,'Date_validation'=>$Date_validation, 'description_annonces'=>$description_annonces, 'date_creation'=>$date_creation,'duree_publication'=>$duree_publication,  'date_fin_publication'=>$date_fin_publication,'id_membre,'=>$id_membre, 'id_etat'=>$id_etat, 'id_membre_1'=>$id_membre_1,]);
             // Vérification qu'une ligne a bien été impactée avec rowCount(). Si oui, on estime que la requête a bien été passée, sinon, elle a sûrement échoué.
             if ($updateAboStmt->rowCount()) {
                 // Une ligne a été mise à jour => message de succès

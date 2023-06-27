@@ -36,6 +36,7 @@ $annonces = getAnnonces();
 
 <?php require_once 'header.php' ?>
 
+<<<<<<< HEAD
 <div class='row'>
     <div class='jumbotron bg-light m-2 p-2'>
         <h1 class='display-4'>Bienvenue au petit annonce!</h1>
@@ -58,6 +59,14 @@ $annonces = getAnnonces();
 </div>
 <br>
 <br>
+=======
+<a href='index.php' class='btn btn-secondary m-2 active' role='button'>Accueil</a>
+<a href='annonces.php' class='btn btn-secondary m-2 active' role='button'>Annonces</a>
+<a href='categorie.php' class='btn btn-secondary m-2 active' role='button'>Categorie</a>
+<a href='members.php' class='btn btn-secondary m-2 active' role='button'>Membres</a>
+<a href='utilisateurs.php' class='btn btn-secondary m-2 active' role='button'>Utilisateurs</a>
+<a href='contact.php' class='btn btn-secondary m-2 active' role='button'>Contact</a>
+>>>>>>> 991bccced84c2ffc7e65fb706e1dd1903d4f7c2a
 <div class='row'>
     <h1 class='col-md-12 text-center border border-dark bg-primary text-white'>Annonce-Form</h1>
 </div>
@@ -164,6 +173,7 @@ $annonces = getAnnonces();
         <br/>
     </form>
 </div>
+<<<<<<< HEAD
 <br/>
 <!DOCTYPE html>
 <html lang="fr">
@@ -215,3 +225,7 @@ $annonces = getAnnonces();
     </body>
 </html>
 <?php require_once 'footer.php' ?>
+=======
+
+<?php require_once 'footer.php' ?>
+>>>>>>> 991bccced84c2ffc7e65fb706e1dd1903d4f7c2a

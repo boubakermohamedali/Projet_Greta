@@ -21,6 +21,7 @@ try {
 $db=null;
 ?>
 <?php require_once 'header.php' ?>
+<<<<<<< HEAD
 <div class='row'>
     <div class='jumbotron bg-light m-2 p-2'>
         <h1 class='display-4'>Bienvenue au petit annonce!</h1>
@@ -42,6 +43,15 @@ $db=null;
     </div>
 </div>
 <br/><br/><br/>
+=======
+
+<a href='index.php' class='btn btn-secondary m-2 active' role='button'>Accueil</a>
+<a href='annonces.php' class='btn btn-secondary m-2 active' role='button'>Annonces</a>
+<a href='categorie.php' class='btn btn-secondary m-2 active' role='button'>Categorie</a>
+<a href='members.php' class='btn btn-secondary m-2 active' role='button'>Membres</a>
+<a href='utilisateurs.php' class='btn btn-secondary m-2 active' role='button'>Utilisateurs</a>
+<a href='contact.php' class='btn btn-secondary m-2 active' role='button'>Contact</a>
+>>>>>>> 991bccced84c2ffc7e65fb706e1dd1903d4f7c2a
 
 <?php if (!empty($_GET['type']) && ($_GET['type'] === 'success')) : ?>
     <div class='row'>
@@ -122,6 +132,7 @@ $db=null;
         <a class='btn btn-success' href='member-form.php' role='button'>Ajouter membre</a>
     </div>
 </div>
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,3 +183,7 @@ $db=null;
     </body>
 </html>
 <?php require_once 'footer.php' ?>
+=======
+
+<?php require_once 'footer.php' ?>
+>>>>>>> 991bccced84c2ffc7e65fb706e1dd1903d4f7c2a

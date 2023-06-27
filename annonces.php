@@ -13,24 +13,11 @@ try {
 ?>
 
 <?php require_once 'header.php' ?>
-<div class='row'>
-    <div class='jumbotron bg-light m-2 p-2'>
-        <h1 class='display-4'>Bienvenue au petit annonce!</h1>
-        <header>
-          <a href="index.php"><img src="images/pinterest.png" alt="petit_annonce!"></a>
-        </header>
-        <br>
-        <p class='lead'>Ici vous pouvez gérer les abonnement pour le très exclusif petit annonce !</p>
-        <hr class='my-4'>
-        <p>Cliquer sur un des boutons ci-dessous pour obtenir une liste des membres ou des types categorie</p>
-        <br><br/>
-        <a href='index.php' class='btn btn-secondary m-2 active' role='button'>Accueil</a>
-        <a href='annonces.php' class='btn btn-secondary m-2 active' role='button'>Annonces</a>
-        <a href='categorie.php' class='btn btn-secondary m-2 active' role='button'>Categories</a>
-        <a href='members.php' class='btn btn-secondary m-2 active' role='button'>Membres</a>
-        <a href='login.php' class='btn btn-secondary m-2 active' role='button'>Contacts</a>
-    </div>
-</div>
+<a href='index.php' class='btn btn-secondary m-2 active' role='button'>Accueil</a>
+<a href='annonces.php' class='btn btn-secondary m-2 active' role='button'>Annonces</a>
+<a href='categorie.php' class='btn btn-secondary m-2 active' role='button'>Categorie</a>
+<a href='members.php' class='btn btn-secondary m-2 active' role='button'>Membres</a>
+<a href='utilisateurs.php' class='btn btn-secondary m-2 active' role='button'>Utilisateurs</a>
 
 
 <br/>
